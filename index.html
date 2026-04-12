@@ -214,16 +214,16 @@
   nav .nav-links a { font-family: "DM Sans", sans-serif !important; }
   nav .hamburger span { background: #1C0F06; }
 
-    #mobileMenu {
+    ##mobileMenu {
       display: none;
       position: fixed;
-      top: 96px;
+      top: 0;
       left: 0; right: 0; bottom: 0;
       background: #F3EBE1;
-      z-index: 99;
-      padding: 40px;
+      z-index: 999;
+      padding: 100px 40px 40px;
       flex-direction: column;
-      gap: 28px;
+      gap: 32px;
     }
     #mobileMenu a {
       font-family: "DM Sans", sans-serif;
@@ -922,16 +922,16 @@
   nav .nav-links a { font-family: "DM Sans", sans-serif !important; }
   nav .hamburger span { background: #1C0F06; }
 
-    #mobileMenu {
+    ##mobileMenu {
       display: none;
       position: fixed;
-      top: 96px;
+      top: 0;
       left: 0; right: 0; bottom: 0;
       background: #F3EBE1;
-      z-index: 99;
-      padding: 40px;
+      z-index: 999;
+      padding: 100px 40px 40px;
       flex-direction: column;
-      gap: 28px;
+      gap: 32px;
     }
     #mobileMenu a {
       font-family: "DM Sans", sans-serif;
@@ -1443,12 +1443,12 @@
   }
 </script>
 
-<div id="mobileMenu" style="display:none;position:fixed;top:96px;left:0;right:0;bottom:0;background:#F3EBE1;z-index:99;padding:40px;flex-direction:column;gap:28px;">
-  <a href="why-us.html" style="font-family:'DM Sans',sans-serif;font-size:16px;letter-spacing:0.14em;text-transform:uppercase;color:#1C0F06;text-decoration:none;" onclick="toggleNav()">Why Us</a>
-  <a href="#pools" style="font-family:'DM Sans',sans-serif;font-size:16px;letter-spacing:0.14em;text-transform:uppercase;color:#1C0F06;text-decoration:none;" onclick="toggleNav()">Our Pools</a>
-  <a href="#faq" style="font-family:'DM Sans',sans-serif;font-size:16px;letter-spacing:0.14em;text-transform:uppercase;color:#1C0F06;text-decoration:none;" onclick="toggleNav()">FAQ</a>
-  <a href="financing.html" style="font-family:'DM Sans',sans-serif;font-size:16px;letter-spacing:0.14em;text-transform:uppercase;color:#1C0F06;text-decoration:none;" onclick="toggleNav()">Financing</a>
-  <a href="contact.html" style="font-family:'DM Sans',sans-serif;font-size:16px;letter-spacing:0.14em;text-transform:uppercase;color:#1C0F06;text-decoration:none;" onclick="toggleNav()">Contact Us</a>
+<div id="mobileMenu">
+  <a href="why-us.html" onclick="toggleNav()">Why Us</a>
+  <a href="#pools" onclick="toggleNav()">Our Pools</a>
+  <a href="#faq" onclick="toggleNav()">FAQ</a>
+  <a href="financing.html" onclick="toggleNav()">Financing</a>
+  <a href="contact.html" onclick="toggleNav()">Contact Us</a>
 </div>
 
 <script>
