@@ -251,6 +251,13 @@
   </ul>
   <button class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
 </nav>
+<div id="mobileMenu" style="display:none;">
+  <a href="why-us.html" onclick="toggleNav()">Why Us</a>
+  <a href="#pools" onclick="toggleNav()">Our Pools</a>
+  <a href="#faq" onclick="toggleNav()">FAQ</a>
+  <a href="financing.html" onclick="toggleNav()">Financing</a>
+  <a href="contact.html" onclick="toggleNav()">Contact Us</a>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -735,19 +742,13 @@
   }
 </script>
 
-<div id="mobileMenu">
-  <a href="why-us.html" onclick="toggleNav()">Why Us</a>
-  <a href="#pools" onclick="toggleNav()">Our Pools</a>
-  <a href="#faq" onclick="toggleNav()">FAQ</a>
-  <a href="financing.html" onclick="toggleNav()">Financing</a>
-  <a href="contact.html" onclick="toggleNav()">Contact Us</a>
-</div>
+
 </body>
 </html>
 <script>
 function toggleNav() {
   var menu = document.getElementById("mobileMenu");
-  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "flex" : "none";
 }
 </script>
 </body>
