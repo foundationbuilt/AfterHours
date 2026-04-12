@@ -702,7 +702,7 @@
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // Time card
+  // Pools
   let cc = 0;
   function showCard(n) {
     document.querySelectorAll('.tc-panel').forEach((p,i) => p.style.display = i===n?'block':'none');
@@ -719,7 +719,8 @@
     document.getElementById('procCounter').textContent = (n+1) + ' / 8';
     pc = n;
   }
-  evProc() { showProc((pc-1+8)%8); }
+  function nextProc() { showProc((pc+1)%8); }
+  function prevProc() { showProc((pc-1+8)%8); }
 
   // FAQ
   function toggleFaq(btn) {
