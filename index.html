@@ -203,6 +203,22 @@
       .tc-header{flex-direction:column;gap:8px;}
       .tc-header-right{text-align:left;}
     }
+
+  @media(max-width:768px) {
+    .comparison-row { grid-template-columns: 1fr !important; }
+    .comparison-row > div { border-right: none !important; border-bottom: 1px solid rgba(28,15,6,0.1); }
+    .comparison-header { display: none !important; }
+    .comparison-val::before { font-family: "Courier Prime", monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #957060; display: block; margin-bottom: 4px; }
+    .comparison-ah::before { content: "After Hours"; }
+    .comparison-bb::before { content: "Budget Builders"; }
+  }
+
+  @media(max-width:600px) {
+    .comp-row, .comp-header { grid-template-columns: 1.2fr 1fr 1fr !important; }
+    .comp-row > div, .comp-header > div { padding: 10px 6px !important; font-size: 10px !important; }
+    .comp-row > div span { font-size: 10px !important; }
+    .comp-row > div span[style*="width:28px"] { width: 18px !important; height: 18px !important; font-size: 10px !important; margin-bottom: 2px !important; }
+  }
   nav .nav-links a { font-family: "DM Sans", sans-serif !important; }
   nav .hamburger span { background: #1C0F06; }
 
@@ -558,11 +574,10 @@
     <p style="font-family:'Courier Prime',monospace;font-size:15px;color:#1C0F06;line-height:1.85;margin-bottom:16px;">Many builders advertise low prices but those come with cutting corners and low grade materials and skimping on equipment.</p>
     <p style="font-family:'Courier Prime',monospace;font-size:15px;color:#1C0F06;line-height:1.85;margin-bottom:40px;">At After Hours we do the opposite — holding ourselves to higher standards with high quality, curated materials that most builders at this price point simply won't use.</p>
 
-    <div class="timecard" style="overflow-x:auto;">
-      <div style="min-width:500px;">
+    <div class="timecard">
 
       <!-- Header Row -->
-      <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.15);">
+      <div class="comp-header" style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.15);">
         <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-weight:700;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;">Features</div>
         <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;">
           <span style="font-family:'Courier Prime',monospace;font-weight:700;font-size:14px;color:#1C0F06;">After Hours</span>
@@ -573,45 +588,45 @@
       </div>
 
       <!-- Row 1 -->
-      <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;">Coping</div>
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✓</span>Limestone, Travertine or Porcelain</div>
-        <div style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✗</span>Concrete w/ Acrylic Lace</div>
+      <div class="comp-row" style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
+        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;" class="comparison-feature comp-feature">Coping</div>
+        <div class="comp-ah" style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✓</span>Limestone, Travertine or Porcelain</div>
+        <div class="comp-bb" style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✗</span>Concrete w/ Acrylic Lace</div>
       </div>
 
       <!-- Row 2 -->
-      <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;">Waterline Tile</div>
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✓</span>Premium Imported Tile</div>
-        <div style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✗</span>Cheap 6x6 Tile</div>
+      <div class="comp-row" style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
+        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;" class="comparison-feature comp-feature">Waterline Tile</div>
+        <div class="comp-ah" style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✓</span>Premium Imported Tile</div>
+        <div class="comp-bb" style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✗</span>Cheap 6x6 Tile</div>
       </div>
 
       <!-- Row 3 -->
-      <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;">Interior Finish</div>
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✓</span>PebbleTec PebbleSheen</div>
-        <div style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✗</span>Off Brand Competitor</div>
+      <div class="comp-row" style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
+        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;" class="comparison-feature comp-feature">Interior Finish</div>
+        <div class="comp-ah" style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✓</span>PebbleTec PebbleSheen</div>
+        <div class="comp-bb" style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✗</span>Off Brand Competitor</div>
       </div>
 
       <!-- Row 4 -->
-      <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;">Lights</div>
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✓</span>LED Nicheless Color Changing</div>
-        <div style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✗</span>Incandescent 400W Light</div>
+      <div class="comp-row" style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
+        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;" class="comparison-feature comp-feature">Lights</div>
+        <div class="comp-ah" style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✓</span>LED Nicheless Color Changing</div>
+        <div class="comp-bb" style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✗</span>Incandescent 400W Light</div>
       </div>
 
       <!-- Row 5 -->
-      <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;">Pump</div>
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✓</span>High Head Variable Speed</div>
-        <div style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✗</span>Medium Head Variable Speed</div>
+      <div class="comp-row" style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
+        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;" class="comparison-feature comp-feature">Pump</div>
+        <div class="comp-ah" style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✓</span>High Head Variable Speed</div>
+        <div class="comp-bb" style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✗</span>Medium Head Variable Speed</div>
       </div>
 
       <!-- Row 6 -->
-      <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;">Automation</div>
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✓</span>Jandy AquaLink</div>
-        <div style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✗</span>No Automation</div>
+      <div class="comp-row" style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
+        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;" class="comparison-feature comp-feature">Automation</div>
+        <div class="comp-ah" style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✓</span>Jandy AquaLink</div>
+        <div class="comp-bb" style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;"><span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #1C0F06;font-size:14px;margin-bottom:4px;">✗</span>No Automation</div>
       </div>
 
 
@@ -904,6 +919,22 @@
       .tc-header{flex-direction:column;gap:8px;}
       .tc-header-right{text-align:left;}
     }
+
+  @media(max-width:768px) {
+    .comparison-row { grid-template-columns: 1fr !important; }
+    .comparison-row > div { border-right: none !important; border-bottom: 1px solid rgba(28,15,6,0.1); }
+    .comparison-header { display: none !important; }
+    .comparison-val::before { font-family: "Courier Prime", monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #957060; display: block; margin-bottom: 4px; }
+    .comparison-ah::before { content: "After Hours"; }
+    .comparison-bb::before { content: "Budget Builders"; }
+  }
+
+  @media(max-width:600px) {
+    .comp-row, .comp-header { grid-template-columns: 1.2fr 1fr 1fr !important; }
+    .comp-row > div, .comp-header > div { padding: 10px 6px !important; font-size: 10px !important; }
+    .comp-row > div span { font-size: 10px !important; }
+    .comp-row > div span[style*="width:28px"] { width: 18px !important; height: 18px !important; font-size: 10px !important; margin-bottom: 2px !important; }
+  }
   nav .nav-links a { font-family: "DM Sans", sans-serif !important; }
   nav .hamburger span { background: #1C0F06; }
 
@@ -1259,11 +1290,10 @@
     <p style="font-family:'Courier Prime',monospace;font-size:15px;color:#1C0F06;line-height:1.85;margin-bottom:16px;">Many builders advertise low prices but those come with cutting corners and low grade materials and skimping on equipment.</p>
     <p style="font-family:'Courier Prime',monospace;font-size:15px;color:#1C0F06;line-height:1.85;margin-bottom:40px;">At After Hours we do the opposite — holding ourselves to higher standards with high quality, curated materials that most builders at this price point simply won't use.</p>
 
-    <div class="timecard" style="overflow-x:auto;">
-      <div style="min-width:500px;">
+    <div class="timecard">
 
       <!-- Header Row -->
-      <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.15);">
+      <div class="comp-header" style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.15);">
         <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-weight:700;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;">Features</div>
         <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;">
           <span style="font-family:'Courier Prime',monospace;font-weight:700;font-size:14px;color:#1C0F06;">After Hours</span>
@@ -1274,45 +1304,45 @@
       </div>
 
       <!-- Row 1 -->
-      <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;">Coping</div>
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">Limestone, Travertine or Porcelain</div>
-        <div style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">Concrete w/ Acrylic Lace</div>
+      <div class="comp-row" style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
+        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;" class="comparison-feature comp-feature">Coping</div>
+        <div class="comp-ah" style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">Limestone, Travertine or Porcelain</div>
+        <div class="comp-bb" style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">Concrete w/ Acrylic Lace</div>
       </div>
 
       <!-- Row 2 -->
-      <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;">Waterline Tile</div>
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">Premium Imported Tile</div>
-        <div style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">Cheap 6x6 Tile</div>
+      <div class="comp-row" style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
+        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;" class="comparison-feature comp-feature">Waterline Tile</div>
+        <div class="comp-ah" style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">Premium Imported Tile</div>
+        <div class="comp-bb" style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">Cheap 6x6 Tile</div>
       </div>
 
       <!-- Row 3 -->
-      <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;">Interior Finish</div>
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">PebbleTec PebbleSheen</div>
-        <div style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">Off Brand Competitor</div>
+      <div class="comp-row" style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
+        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;" class="comparison-feature comp-feature">Interior Finish</div>
+        <div class="comp-ah" style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">PebbleTec PebbleSheen</div>
+        <div class="comp-bb" style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">Off Brand Competitor</div>
       </div>
 
       <!-- Row 4 -->
-      <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;">Lights</div>
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">LED Nicheless Color Changing</div>
-        <div style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">Incandescent 400W Light</div>
+      <div class="comp-row" style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
+        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;" class="comparison-feature comp-feature">Lights</div>
+        <div class="comp-ah" style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">LED Nicheless Color Changing</div>
+        <div class="comp-bb" style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">Incandescent 400W Light</div>
       </div>
 
       <!-- Row 5 -->
-      <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;">Pump</div>
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">High Head Variable Speed</div>
-        <div style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">Medium Head Variable Speed</div>
+      <div class="comp-row" style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
+        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;" class="comparison-feature comp-feature">Pump</div>
+        <div class="comp-ah" style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">High Head Variable Speed</div>
+        <div class="comp-bb" style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">Medium Head Variable Speed</div>
       </div>
 
       <!-- Row 6 -->
-      <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;">Automation</div>
-        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">Jandy AquaLink</div>
-        <div style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">No Automation</div>
+      <div class="comp-row" style="display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid rgba(28,15,6,0.08);">
+        <div style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);font-family:'Courier Prime',monospace;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1C0F06;text-align:center;" class="comparison-feature comp-feature">Automation</div>
+        <div class="comp-ah" style="padding:14px 16px;border-right:1px solid rgba(28,15,6,0.1);text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">Jandy AquaLink</div>
+        <div class="comp-bb" style="padding:14px 16px;text-align:center;font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;display:flex;flex-direction:column;align-items:center;justify-content:center;">No Automation</div>
       </div>
 
 
