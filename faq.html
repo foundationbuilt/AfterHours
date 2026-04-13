@@ -153,11 +153,11 @@
 
     /* FAQ */
     .faq-item{border-bottom:1px solid rgba(196,82,30,0.13);}
-    .faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 0;font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:300;font-size:20px;color:#1C0F06;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+    .faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 0;font-family:"Courier Prime",monospace;font-style:normal;font-weight:700;font-size:16px;color:#1C0F06;display:flex;justify-content:space-between;align-items:center;gap:16px;}
     .faq-icon{font-style:normal;font-family:"DM Sans",sans-serif;font-size:18px;color:#1C0F06;flex-shrink:0;transition:transform 0.25s;}
     .faq-item.open .faq-icon{transform:rotate(45deg);}
-    .faq-a{font-size:14px;color:#1C0F06;line-height:1.8;max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.2s;font-weight:300;}
-    .faq-item.open .faq-a{max-height:180px;padding-bottom:22px;}
+    .faq-a{font-family:"Courier Prime",monospace;font-size:14px;color:#1C0F06;line-height:1.85;max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.2s;font-weight:400;}
+    .faq-item.open .faq-a{max-height:600px;padding-bottom:22px;}
 
     /* CONTACT */
     .contact-meta{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin:24px 0 8px;}
@@ -249,36 +249,40 @@
     <h2 style="margin-bottom:48px;">Frequently Asked Questions</h2>
     <div class="faq-list">
       <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Are there any restrictions?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Your backyard must be relatively flat with no demolition required — grass or pavers need to be removed prior to build. We cannot build on slopes or hillsides. A minimum 3-foot gate access is required for excavation equipment. Pool equipment placement cannot exceed 40 feet from the pool, and the main power run cannot exceed 100 feet.</div>
+      </div>
+      <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">What does the price include?<span class="faq-icon">+</span></button>
-        <div class="faq-a"></div>
+        <div class="faq-a">Our pricing covers everything you need — design, permits, engineering, construction, equipment, and finishes. What you see is what you pay. No hidden costs, no surprises at the end.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">Do you make custom sizes?<span class="faq-icon">+</span></button>
-        <div class="faq-a"></div>
+        <div class="faq-a">We currently offer three engineered sizes: Private (10×18), Social (12×24), and Gathering (14×28). Our model is built around these fixed sizes because they allow us to maintain tighter timelines, higher quality control, and better pricing for our customers. Custom dimensions outside of these sizes are not available at this time.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">Are there any upgrades or add-ons?<span class="faq-icon">+</span></button>
-        <div class="faq-a"></div>
+        <div class="faq-a">Yes. Available add-ons include a Baja Shelf, Salt System, Heater, Heat/Cool Pump, Chiller, Infloor Cleaning System, Slate Colorway upgrade, Spa, and Automation. Visit our pools page to explore options and build your configuration.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">What pool equipment do you use?<span class="faq-icon">+</span></button>
-        <div class="faq-a"></div>
+        <div class="faq-a">Every After Hours pool is built with Jandy equipment — one of the most trusted names in the industry. Standard equipment includes the Jandy CV460 filter, FloPro VS 1.85 variable speed pump, iAqualink automation system, and Watercolors RGB LED lighting.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">What's your warranty?<span class="faq-icon">+</span></button>
-        <div class="faq-a"></div>
+        <div class="faq-a">We stand behind our work with a 2-year workmanship warranty covering everything we build. PebbleTec carries a 5-year manufacturer warranty on the interior finish, and Jandy provides a 3-year manufacturer warranty on all equipment.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">Do you offer financing?<span class="faq-icon">+</span></button>
-        <div class="faq-a"></div>
+        <div class="faq-a">Yes, we do. We understand that a pool is a significant investment, so we've partnered with a trusted lender to offer flexible financing options that make your build more accessible. <a href="financing.html" style="color:#C4521E;text-decoration:underline;">Visit our financing page</a> to learn more or contact us to discuss the best plan for you.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">What areas do you serve?<span class="faq-icon">+</span></button>
-        <div class="faq-a"></div>
+        <div class="faq-a">We serve the greater Phoenix area including Phoenix, Scottsdale, Mesa, Gilbert, Chandler, Tempe, Cave Creek, Peoria, Glendale, and Surprise. Not sure if we cover your area? Reach out and we'll let you know.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">Do you do landscape / hardscape?<span class="faq-icon">+</span></button>
-        <div class="faq-a"></div>
+        <div class="faq-a">We don't offer landscaping or hardscape. Our focus is building exceptional pools, and we believe a specialist in that field will deliver better results and more value for that portion of your project.</div>
       </div>
     </div>
   </div>
