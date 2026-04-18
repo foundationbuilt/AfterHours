@@ -572,6 +572,103 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Custom Pool Construction",
+      "name": "Private",
+      "description": "10' × 18' pool with 4.5' depth. All-in pricing. Built in Phoenix, AZ.",
+      "provider": {"@id": "https://afterhourspoolco.com/#business"},
+      "areaServed": [
+        {"@type": "City", "name": "Phoenix"},
+        {"@type": "City", "name": "Scottsdale"},
+        {"@type": "City", "name": "Peoria"},
+        {"@type": "City", "name": "Mesa"},
+        {"@type": "City", "name": "Gilbert"},
+        {"@type": "City", "name": "Chandler"}
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "45000",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "addOn": [
+          {"@type": "Offer", "name": "Baja Shelf", "price": "0", "priceCurrency": "USD", "description": "Included at no additional charge"},
+          {"@type": "Offer", "name": "Salt System", "price": "4000", "priceCurrency": "USD"},
+          {"@type": "Offer", "name": "Heater (includes gas plumbing and electrical)", "price": "9500", "priceCurrency": "USD"},
+          {"@type": "Offer", "name": "Heat/Cool Pump (includes plumbing and electrical)", "price": "8500", "priceCurrency": "USD"},
+          {"@type": "Offer", "name": "Chiller (includes plumbing and electrical)", "price": "6500", "priceCurrency": "USD"},
+          {"@type": "Offer", "name": "Infloor Cleaning (Paramount system)", "price": "12500", "priceCurrency": "USD"},
+          {"@type": "Offer", "name": "Spa", "price": "25000", "priceCurrency": "USD"}
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Custom Pool Construction",
+      "name": "Social",
+      "description": "12' × 24' pool with 5' depth. All-in pricing. Built in Phoenix, AZ.",
+      "provider": {"@id": "https://afterhourspoolco.com/#business"},
+      "areaServed": [
+        {"@type": "City", "name": "Phoenix"},
+        {"@type": "City", "name": "Scottsdale"},
+        {"@type": "City", "name": "Peoria"},
+        {"@type": "City", "name": "Mesa"},
+        {"@type": "City", "name": "Gilbert"},
+        {"@type": "City", "name": "Chandler"}
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "52500",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "addOn": [
+          {"@type": "Offer", "name": "Baja Shelf", "price": "0", "priceCurrency": "USD", "description": "Included at no additional charge"},
+          {"@type": "Offer", "name": "Salt System", "price": "4000", "priceCurrency": "USD"},
+          {"@type": "Offer", "name": "Heater (includes gas plumbing and electrical)", "price": "9500", "priceCurrency": "USD"},
+          {"@type": "Offer", "name": "Heat/Cool Pump (includes plumbing and electrical)", "price": "8500", "priceCurrency": "USD"},
+          {"@type": "Offer", "name": "Chiller (includes plumbing and electrical)", "price": "6500", "priceCurrency": "USD"},
+          {"@type": "Offer", "name": "Infloor Cleaning (Paramount system)", "price": "12500", "priceCurrency": "USD"},
+          {"@type": "Offer", "name": "Spa", "price": "25000", "priceCurrency": "USD"}
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Custom Pool Construction",
+      "name": "Gathering",
+      "description": "14' × 28' pool with 5.5' depth. All-in pricing. Built in Phoenix, AZ.",
+      "provider": {"@id": "https://afterhourspoolco.com/#business"},
+      "areaServed": [
+        {"@type": "City", "name": "Phoenix"},
+        {"@type": "City", "name": "Scottsdale"},
+        {"@type": "City", "name": "Peoria"},
+        {"@type": "City", "name": "Mesa"},
+        {"@type": "City", "name": "Gilbert"},
+        {"@type": "City", "name": "Chandler"}
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "60000",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "addOn": [
+          {"@type": "Offer", "name": "Baja Shelf", "price": "0", "priceCurrency": "USD", "description": "Included at no additional charge"},
+          {"@type": "Offer", "name": "Salt System", "price": "4000", "priceCurrency": "USD"},
+          {"@type": "Offer", "name": "Heater (includes gas plumbing and electrical)", "price": "9500", "priceCurrency": "USD"},
+          {"@type": "Offer", "name": "Heat/Cool Pump (includes plumbing and electrical)", "price": "8500", "priceCurrency": "USD"},
+          {"@type": "Offer", "name": "Chiller (includes plumbing and electrical)", "price": "6500", "priceCurrency": "USD"},
+          {"@type": "Offer", "name": "Infloor Cleaning (Paramount system)", "price": "12500", "priceCurrency": "USD"},
+          {"@type": "Offer", "name": "Spa", "price": "25000", "priceCurrency": "USD"}
+        ]
+      }
+    }
+  ]
+  </script>
 </head>
 <body class="pools-page">
 
@@ -729,31 +826,43 @@
         </div>
         <div class="addon-row">
           <div class="addon-left">
-            <input type="checkbox" id="ao-heater" data-price="9000" onchange="recalc()">
-            <label class="addon-name" for="ao-heater">Heater</label>
-          </div>
-          <div class="addon-right">+$9,000</div>
-        </div>
-        <div class="addon-row">
-          <div class="addon-left">
-            <input type="checkbox" id="ao-heatcool" data-price="10000" onchange="recalc()">
-            <label class="addon-name" for="ao-heatcool">Heat/Cool Pump</label>
-          </div>
-          <div class="addon-right">+$10,000</div>
-        </div>
-        <div class="addon-row">
-          <div class="addon-left">
-            <input type="checkbox" id="ao-chiller" data-price="10000" onchange="recalc()">
-            <label class="addon-name" for="ao-chiller">Chiller</label>
-          </div>
-          <div class="addon-right">+$10,000</div>
-        </div>
-        <div class="addon-row">
-          <div class="addon-left">
-            <input type="checkbox" id="ao-infloor" data-price="9500" onchange="recalc()">
-            <label class="addon-name" for="ao-infloor">Infloor Cleaning</label>
+            <input type="checkbox" id="ao-heater" data-price="9500" onchange="recalc()">
+            <div>
+              <label class="addon-name" for="ao-heater">Heater</label>
+              <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:#1C0F06;opacity:0.5;letter-spacing:0.04em;line-height:1.5;margin-top:2px;">includes gas plumbing &amp; electrical</div>
+            </div>
           </div>
           <div class="addon-right">+$9,500</div>
+        </div>
+        <div class="addon-row">
+          <div class="addon-left">
+            <input type="checkbox" id="ao-heatcool" data-price="8500" onchange="recalc()">
+            <div>
+              <label class="addon-name" for="ao-heatcool">Heat/Cool Pump</label>
+              <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:#1C0F06;opacity:0.5;letter-spacing:0.04em;line-height:1.5;margin-top:2px;">includes plumbing &amp; electrical</div>
+            </div>
+          </div>
+          <div class="addon-right">+$8,500</div>
+        </div>
+        <div class="addon-row">
+          <div class="addon-left">
+            <input type="checkbox" id="ao-chiller" data-price="6500" onchange="recalc()">
+            <div>
+              <label class="addon-name" for="ao-chiller">Chiller</label>
+              <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:#1C0F06;opacity:0.5;letter-spacing:0.04em;line-height:1.5;margin-top:2px;">includes plumbing &amp; electrical</div>
+            </div>
+          </div>
+          <div class="addon-right">+$6,500</div>
+        </div>
+        <div class="addon-row">
+          <div class="addon-left">
+            <input type="checkbox" id="ao-infloor" data-price="12500" onchange="recalc()">
+            <div>
+              <label class="addon-name" for="ao-infloor">Infloor Cleaning</label>
+              <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:#1C0F06;opacity:0.5;letter-spacing:0.04em;line-height:1.5;margin-top:2px;">Paramount system</div>
+            </div>
+          </div>
+          <div class="addon-right">+$12,500</div>
         </div>
         <div class="addon-row">
           <div class="addon-left">
