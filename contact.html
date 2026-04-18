@@ -325,39 +325,39 @@
         <div class="tc-row">
           <span class="tc-row-label">Name</span>
           <span class="tc-row-val" style="white-space:normal;padding:10px 16px;width:100%;">
-            <div class="form-field" style="width:100%;"><input type="text" placeholder="Full Name"/></div>
+            <div class="form-field" style="width:100%;"><input type="text" name="name" placeholder="Full Name" required/></div>
           </span>
         </div>
         <div class="tc-row">
           <span class="tc-row-label">Phone</span>
           <span class="tc-row-val" style="white-space:normal;padding:10px 16px;width:100%;">
-            <div class="form-field" style="width:100%;"><input type="tel" placeholder="(602) 803-3095"/></div>
+            <div class="form-field" style="width:100%;"><input type="tel" name="phone" placeholder="(602) 555-1234" required/></div>
           </span>
         </div>
         <div class="tc-row">
           <span class="tc-row-label">Email</span>
           <span class="tc-row-val" style="white-space:normal;padding:10px 16px;width:100%;">
-            <div class="form-field" style="width:100%;"><input type="email" placeholder="you@email.com"/></div>
+            <div class="form-field" style="width:100%;"><input type="email" name="email" placeholder="you@email.com" required/></div>
           </span>
         </div>
         <div class="tc-row">
           <span class="tc-row-label">Pool</span>
           <span class="tc-row-val" style="white-space:normal;padding:10px 16px;width:100%;">
             <div class="form-field" style="width:100%;">
-              <select><option value="">— Select —</option><option>Private · 10×18 · $45,000</option><option>Social · 12×24 · $52,500</option><option>Gathering · 14×28 · $60,000</option><option>Not sure yet</option></select>
+              <select name="pool" required><option value="">— Select —</option><option>Private · 10×18 · $45,000</option><option>Social · 12×24 · $52,500</option><option>Gathering · 14×28 · $60,000</option><option>Not sure yet</option></select>
             </div>
           </span>
         </div>
         <div class="tc-row">
           <span class="tc-row-label">Address</span>
           <span class="tc-row-val" style="white-space:normal;padding:10px 16px;width:100%;">
-            <div class="form-field" style="width:100%;"><input type="text" placeholder="Property address"/></div>
+            <div class="form-field" style="width:100%;"><input type="text" name="address" placeholder="Property address"/></div>
           </span>
         </div>
         <div class="tc-row">
           <span class="tc-row-label">Notes</span>
           <span class="tc-row-val" style="white-space:normal;padding:10px 16px;width:100%;align-items:flex-start;">
-            <div class="form-field" style="width:100%;"><textarea placeholder="Timeline, questions, anything else..." style="min-height:80px;"></textarea></div>
+            <div class="form-field" style="width:100%;"><textarea name="message" placeholder="Timeline, questions, anything else..." style="min-height:80px;"></textarea></div>
           </span>
         </div>
       </div></div>
@@ -382,7 +382,7 @@
     <p style="font-family:'Courier Prime',monospace;font-size:16px;font-weight:700;letter-spacing:0.04em;color:#1C0F06;opacity:1;margin:0;">Pools Built With Intention</p>
     <a href="tel:+16028033095" style="font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#1C0F06;text-decoration:none;">(602) 803-3095</a>
     <a href="https://instagram.com/afterhourspoolco" target="_blank" style="font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#1C0F06;text-decoration:none;opacity:1;display:flex;flex-direction:column;gap:4px;align-items:flex-start;"><span>Follow Us on Instagram</span><span>@afterhourspoolco</span></a>
-    <p style="font-family:'DM Sans',sans-serif;font-size:11px;color:#1C0F06;opacity:0.3;letter-spacing:0.08em;margin-top:8px;">&copy; 2025 After Hours Pool Co. All rights reserved.</p>
+    <p style="font-family:'DM Sans',sans-serif;font-size:11px;color:#1C0F06;opacity:0.3;letter-spacing:0.08em;margin-top:8px;">&copy; <span id="year"></span> After Hours Pool Co. All rights reserved.</p>
   </div>
 </footer>
 
@@ -393,6 +393,7 @@ function toggleNav() {
   var menu = document.getElementById("mobileMenu");
   menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "flex" : "none";
 }
+document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
 <div id="mobileMenu" style="display:none;position:fixed;top:96px;left:0;width:100%;background:#F3EBE1;z-index:9999;padding:24px 24px 32px;flex-direction:column;gap:20px;border-bottom:1px solid rgba(28,15,6,0.1);box-shadow:0 4px 12px rgba(28,15,6,0.08);">
