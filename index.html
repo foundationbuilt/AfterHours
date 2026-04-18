@@ -686,43 +686,44 @@
           <p class="tc-pool-name" style="font-size:16px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-top:20px;">New Build Inquiry</p>
       </div>
       <form action="https://formspree.io/f/xojywdad" method="POST">
+      <input type="hidden" name="_subject" value="New Lead from After Hours Pool Co.">
       <div class="tc-grid">
         <div class="tc-row">
           <span class="tc-row-label">Name</span>
           <span class="tc-row-val" style="white-space:normal;padding:10px 16px;width:100%;">
-            <div class="form-field" style="width:100%;"><input type="text" placeholder="Full Name"/></div>
+            <div class="form-field" style="width:100%;"><input type="text" name="name" placeholder="Full Name" required/></div>
           </span>
         </div>
         <div class="tc-row">
           <span class="tc-row-label">Phone</span>
           <span class="tc-row-val" style="white-space:normal;padding:10px 16px;width:100%;">
-            <div class="form-field" style="width:100%;"><input type="tel" placeholder="(602) 803-3095"/></div>
+            <div class="form-field" style="width:100%;"><input type="tel" name="phone" placeholder="(602) 555-1234" required/></div>
           </span>
         </div>
         <div class="tc-row">
           <span class="tc-row-label">Email</span>
           <span class="tc-row-val" style="white-space:normal;padding:10px 16px;width:100%;">
-            <div class="form-field" style="width:100%;"><input type="email" placeholder="you@email.com"/></div>
+            <div class="form-field" style="width:100%;"><input type="email" name="email" placeholder="you@email.com" required/></div>
           </span>
         </div>
         <div class="tc-row">
           <span class="tc-row-label">Pool</span>
           <span class="tc-row-val" style="white-space:normal;padding:10px 16px;width:100%;">
             <div class="form-field" style="width:100%;">
-              <select><option value="">— Select —</option><option>Private · 10×18 · $45,000</option><option>Social · 12×24 · $52,500</option><option>Gathering · 14×28 · $60,000</option><option>Not sure yet</option></select>
+              <select name="pool" required><option value="">— Select —</option><option>Private · 10×18 · $45,000</option><option>Social · 12×24 · $52,500</option><option>Gathering · 14×28 · $60,000</option><option>Not sure yet</option></select>
             </div>
           </span>
         </div>
         <div class="tc-row">
           <span class="tc-row-label">Address</span>
           <span class="tc-row-val" style="white-space:normal;padding:10px 16px;width:100%;">
-            <div class="form-field" style="width:100%;"><input type="text" placeholder="Property address"/></div>
+            <div class="form-field" style="width:100%;"><input type="text" name="address" placeholder="Property address"/></div>
           </span>
         </div>
         <div class="tc-row">
           <span class="tc-row-label">Notes</span>
           <span class="tc-row-val" style="white-space:normal;padding:10px 16px;width:100%;align-items:flex-start;">
-            <div class="form-field" style="width:100%;"><textarea placeholder="Timeline, questions, anything else..." style="min-height:80px;"></textarea></div>
+            <div class="form-field" style="width:100%;"><textarea name="message" placeholder="Timeline, questions, anything else..." style="min-height:80px;"></textarea></div>
           </span>
         </div>
       </div><div class="tc-footer" style="display:flex;align-items:center;justify-content:center;padding:12px 24px 24px;"><button type="submit" class="form-submit" style="border-radius:100px;width:auto;padding:14px 40px;">Schedule Your Escape</button>
