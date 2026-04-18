@@ -423,7 +423,7 @@
       </div>
       </form>
       <div class="ahpc-success" style="display:none;text-align:center;padding:32px 28px 40px;">
-        <p style="font-family:'Courier Prime',monospace;font-size:15px;color:#1C0F06;line-height:1.9;">We'll be in touch within one business day.</p>
+        <p style="font-family:'Courier Prime',monospace;font-size:15px;color:#1C0F06;line-height:1.9;">We'll be in touch soon to start making your dream pool a reality.</p>
       </div>
       <div class="ahpc-error" style="display:none;text-align:center;padding:14px 28px;border-top:1px solid rgba(196,82,30,0.3);background:rgba(196,82,30,0.06);">
         <p style="font-family:'Courier Prime',monospace;font-size:13px;color:#C4521E;line-height:1.6;">Something went wrong. Please try again or call <a href="tel:+16028033095" style="color:#C4521E;text-decoration:underline;">(602) 803-3095</a>.</p>
@@ -474,7 +474,7 @@ document.querySelectorAll('form[action*="formspree.io"]').forEach(function(form)
     }).then(function(res){
       if (!res.ok) throw new Error();
       form.style.display = 'none';
-      if (header) header.textContent = 'Thanks';
+      if (header) header.textContent = 'Thanks for reaching out.';
       if (okBox) okBox.style.display = 'block';
     }).catch(function(){
       if (errBox) errBox.style.display = 'block';
