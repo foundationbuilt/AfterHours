@@ -729,6 +729,12 @@
       </div><div class="tc-footer" style="display:flex;align-items:center;justify-content:center;padding:12px 24px 24px;"><button type="submit" class="form-submit" style="border-radius:100px;width:auto;padding:14px 40px;">Schedule Your Escape</button>
       </div>
       </form>
+      <div class="ahpc-success" style="display:none;text-align:center;padding:32px 28px 40px;">
+        <p style="font-family:'Courier Prime',monospace;font-size:15px;color:#1C0F06;line-height:1.9;">We'll be in touch within one business day.</p>
+      </div>
+      <div class="ahpc-error" style="display:none;text-align:center;padding:14px 28px;border-top:1px solid rgba(196,82,30,0.3);background:rgba(196,82,30,0.06);">
+        <p style="font-family:'Courier Prime',monospace;font-size:13px;color:#C4521E;line-height:1.6;">Something went wrong. Please try again or call <a href="tel:+16028033095" style="color:#C4521E;text-decoration:underline;">(602) 803-3095</a>.</p>
+      </div>
     </div>
     <p class="form-note" style="margin-top:16px;">By submitting you agree to be contacted by After Hours Pools. Reply STOP to opt out.</p>
     </div>
@@ -782,6 +788,34 @@ function toggleNav() {
   menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "flex" : "none";
 }
 document.getElementById('year').textContent = new Date().getFullYear();
+document.querySelectorAll('form[action*="formspree.io"]').forEach(function(form){
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var card = form.closest('.timecard');
+    var btn = form.querySelector('button[type="submit"]');
+    var errBox = card ? card.querySelector('.ahpc-error') : null;
+    var okBox = card ? card.querySelector('.ahpc-success') : null;
+    var header = card ? card.querySelector('.tc-pool-name') : null;
+    var orig = btn ? btn.textContent : '';
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+    if (errBox) errBox.style.display = 'none';
+    var payload = {};
+    new FormData(form).forEach(function(v, k){ payload[k] = v; });
+    fetch(form.action, {
+      method: 'POST',
+      headers: {'Accept':'application/json','Content-Type':'application/json'},
+      body: JSON.stringify(payload)
+    }).then(function(res){
+      if (!res.ok) throw new Error();
+      form.style.display = 'none';
+      if (header) header.textContent = 'Thanks';
+      if (okBox) okBox.style.display = 'block';
+    }).catch(function(){
+      if (errBox) errBox.style.display = 'block';
+      if (btn) { btn.disabled = false; btn.textContent = orig; }
+    });
+  });
+});
 </script>
 
 
