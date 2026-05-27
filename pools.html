@@ -621,6 +621,7 @@
         "itemListElement": [
           {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Baja Shelf"}, "price": "0", "priceCurrency": "USD", "description": "Included at no additional charge"},
           {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Salt System"}, "price": "4000", "priceCurrency": "USD"},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Water Feature"}, "price": "7500", "priceCurrency": "USD"},
           {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Heater (includes gas plumbing and electrical)"}, "price": "9500", "priceCurrency": "USD"},
           {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Heat/Cool Pump (includes plumbing and electrical)"}, "price": "8500", "priceCurrency": "USD"},
           {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Chiller (includes plumbing and electrical)"}, "price": "6500", "priceCurrency": "USD"},
@@ -656,6 +657,7 @@
         "itemListElement": [
           {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Baja Shelf"}, "price": "0", "priceCurrency": "USD", "description": "Included at no additional charge"},
           {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Salt System"}, "price": "4000", "priceCurrency": "USD"},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Water Feature"}, "price": "7500", "priceCurrency": "USD"},
           {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Heater (includes gas plumbing and electrical)"}, "price": "9500", "priceCurrency": "USD"},
           {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Heat/Cool Pump (includes plumbing and electrical)"}, "price": "8500", "priceCurrency": "USD"},
           {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Chiller (includes plumbing and electrical)"}, "price": "6500", "priceCurrency": "USD"},
@@ -691,6 +693,7 @@
         "itemListElement": [
           {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Baja Shelf"}, "price": "0", "priceCurrency": "USD", "description": "Included at no additional charge"},
           {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Salt System"}, "price": "4000", "priceCurrency": "USD"},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Water Feature"}, "price": "7500", "priceCurrency": "USD"},
           {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Heater (includes gas plumbing and electrical)"}, "price": "9500", "priceCurrency": "USD"},
           {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Heat/Cool Pump (includes plumbing and electrical)"}, "price": "8500", "priceCurrency": "USD"},
           {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Chiller (includes plumbing and electrical)"}, "price": "6500", "priceCurrency": "USD"},
@@ -837,12 +840,12 @@
         </div>
         <div class="color-option" onclick="selectColor(this, 0)" id="color-3">
           <div class="color-swatch swatch-terracotta"></div>
-          <div class="color-option-name">Terracotta</div>
+          <div class="color-option-name">Clementine</div>
           <div class="color-option-price">Included</div>
         </div>
         <div class="color-option" onclick="selectColor(this, 0)" id="color-4">
           <div class="color-swatch swatch-blue"></div>
-          <div class="color-option-name">Blue</div>
+          <div class="color-option-name">Sky Blue</div>
           <div class="color-option-price">Included</div>
         </div>
         <div class="color-option" onclick="selectColor(this, 5000)" id="color-5">
@@ -869,6 +872,13 @@
             <label class="addon-name" for="ao-salt">Salt System</label>
           </div>
           <div class="addon-right">+$4,000</div>
+        </div>
+        <div class="addon-row">
+          <div class="addon-left">
+            <input type="checkbox" id="ao-waterfeature" data-price="7500" onchange="recalc()">
+            <label class="addon-name" for="ao-waterfeature">Water Feature</label>
+          </div>
+          <div class="addon-right">+$7,500</div>
         </div>
         <div class="addon-row">
           <div class="addon-left">
@@ -918,8 +928,6 @@
           <div class="addon-right">+$25,000</div>
         </div>
       </div>
-
-      <p style="font-family:'Courier Prime',monospace;font-size:14px;color:#1C0F06;line-height:1.9;margin-top:32px;">For a deeper look at what drives pool cost in Phoenix and how to evaluate quotes from other builders, see our <a href="/guides/cost-of-building-a-pool-in-phoenix.html" style="color:#C4521E;text-decoration:underline;text-underline-offset:3px;">complete pool cost guide</a>.</p>
 
       <p style="font-family:'DM Sans',sans-serif;font-size:11px;color:#1C0F06;opacity:0.35;letter-spacing:0.06em;line-height:1.7;margin-top:24px;">After Hours Pool Co. is not a lender. Estimated monthly payments are based on 6.99% APR over 30 years and are for illustrative purposes only. Actual rates and terms are subject to credit approval through our lending partner.</p>
 
