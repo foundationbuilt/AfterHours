@@ -554,6 +554,42 @@
   }
 
   .build-inner { max-width: 640px; margin: 0 auto; }
+    /* ===== Pool Configuration Showcase ===== */
+    .config-showcase{margin-bottom:48px;}
+    .config-showcase .tc-header{text-align:center;}
+    .config-stage{display:flex;align-items:center;gap:12px;padding:20px 16px;}
+    .config-arrow{flex:0 0 auto;width:44px;height:44px;border-radius:50%;
+      border:1px solid rgba(196,82,30,0.4);background:#F3EBE1;color:#C4521E;
+      font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;
+      justify-content:center;transition:background 0.2s,color 0.2s;font-family:"Courier Prime",monospace;}
+    .config-arrow:hover{background:#C4521E;color:#F3EBE1;}
+    .config-image{flex:1 1 auto;aspect-ratio:4/3;border:1px solid rgba(196,82,30,0.12);
+      border-radius:2px;overflow:hidden;background:#F3EBE1;min-width:0;}
+    .config-image img{width:100%;height:100%;display:block;object-fit:cover;}
+    .config-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;
+      justify-content:center;gap:8px;text-align:center;padding:16px;
+      background:repeating-linear-gradient(45deg,#F3EBE1,#F3EBE1 12px,#EFE6D6 12px,#EFE6D6 24px);}
+    .config-ph-tier{font-family:"Courier Prime",monospace;font-weight:700;font-size:clamp(20px,4vw,30px);letter-spacing:0.12em;color:#C4521E;}
+    .config-ph-name{font-family:"Courier Prime",monospace;font-weight:700;font-size:clamp(16px,3vw,24px);letter-spacing:0.08em;color:#1C0F06;}
+    .config-ph-tag{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#957060;margin-top:6px;}
+    .config-caption{text-align:center;padding:4px 24px 20px;}
+    .config-name{font-family:"Courier Prime",monospace;font-weight:700;font-size:22px;color:#1C0F06;}
+    .config-size{font-size:13px;letter-spacing:0.08em;color:#957060;margin-top:4px;}
+    .tier-selector{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+      padding:20px 24px 24px;border-top:1px solid rgba(196,82,30,0.2);}
+    .tier-btn{font-family:"Courier Prime",monospace;font-weight:700;font-size:13px;letter-spacing:0.1em;
+      text-transform:uppercase;padding:12px 8px;cursor:pointer;border-radius:100px;
+      border:1px solid rgba(196,82,30,0.4);background:#F3EBE1;color:#1C0F06;
+      transition:background 0.2s,color 0.2s,border-color 0.2s;}
+    .tier-btn:hover{border-color:#C4521E;}
+    .tier-btn.is-active{background:#C4521E;color:#F3EBE1;border-color:#C4521E;}
+    @media(max-width:600px){
+      .config-stage{gap:8px;padding:16px 10px;}
+      .config-arrow{width:36px;height:36px;font-size:17px;}
+      .config-name{font-size:19px;}
+      .tier-selector{gap:8px;padding:16px;}
+      .tier-btn{font-size:12px;padding:11px 4px;letter-spacing:0.06em;}
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -772,6 +808,36 @@ src="https://www.facebook.com/tr?id=1472955013947840&ev=PageView&noscript=1"
     <p class="sub" style="margin-bottom:8px;text-align:center;">Three sizes. All-in pricing.</p>
     <p class="sub" style="margin-bottom:40px;text-align:center;">Built in Phoenix, AZ.</p>
 
+    <!-- POOL CONFIG SHOWCASE -->
+    <div class="timecard config-showcase">
+      <div class="tc-header">
+        <div class="tc-punch-label">Explore Configurations</div>
+        <div class="tc-pool-name" id="cfg-tier-name">Private</div>
+      </div>
+
+      <div class="config-stage">
+        <button type="button" class="config-arrow" id="cfg-prev" aria-label="Previous configuration">&#8592;</button>
+        <div class="config-image" id="cfg-image">
+          <div class="config-ph">
+            <div class="config-ph-tier">PRIVATE</div>
+            <div class="config-ph-name">STANDARD</div>
+            <div class="config-ph-tag">(Placeholder)</div>
+          </div>
+        </div>
+        <button type="button" class="config-arrow" id="cfg-next" aria-label="Next configuration">&#8594;</button>
+      </div>
+
+      <div class="config-caption">
+        <div class="config-name" id="cfg-config-name">Standard</div>
+        <div class="config-size" id="cfg-config-size">10×18</div>
+      </div>
+
+      <div class="tier-selector" role="group" aria-label="Select pool tier">
+        <button type="button" class="tier-btn is-active" data-tier="private" aria-pressed="true">Private</button>
+        <button type="button" class="tier-btn" data-tier="social" aria-pressed="false">Social</button>
+        <button type="button" class="tier-btn" data-tier="gathering" aria-pressed="false">Gathering</button>
+      </div>
+    </div>
     <!-- SPEC CARD -->
     <div class="spec-card">
       <div class="spec-card-header">
@@ -1085,6 +1151,98 @@ src="https://www.facebook.com/tr?id=1472955013947840&ev=PageView&noscript=1"
         'link_location': window.location.pathname
       });
     }
+  });
+</script>
+<script>
+  // Pool configuration showcase. To go live with photos, replace the 12 "PLACEHOLDER"
+  // strings below with Cloudinary URLs — no other code changes needed.
+  const poolConfigs = {
+    private: {
+      label: "Private", size: "10×18",
+      configs: [
+        { name: "Standard",       image: "PLACEHOLDER" },
+        { name: "Standard + Spa", image: "PLACEHOLDER" },
+        { name: "Baja",           image: "PLACEHOLDER" },
+        { name: "Baja + Spa",     image: "PLACEHOLDER" }
+      ]
+    },
+    social: {
+      label: "Social", size: "12×24",
+      configs: [
+        { name: "Standard",       image: "PLACEHOLDER" },
+        { name: "Standard + Spa", image: "PLACEHOLDER" },
+        { name: "Baja",           image: "PLACEHOLDER" },
+        { name: "Baja + Spa",     image: "PLACEHOLDER" }
+      ]
+    },
+    gathering: {
+      label: "Gathering", size: "14×28",
+      configs: [
+        { name: "Standard",       image: "PLACEHOLDER" },
+        { name: "Standard + Spa", image: "PLACEHOLDER" },
+        { name: "Baja",           image: "PLACEHOLDER" },
+        { name: "Baja + Spa",     image: "PLACEHOLDER" }
+      ]
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var currentTier = 'private';
+    var currentIndex = 0;
+
+    var imageEl  = document.getElementById('cfg-image');
+    if (!imageEl) return;
+
+    var tierName = document.getElementById('cfg-tier-name');
+    var cfgName  = document.getElementById('cfg-config-name');
+    var cfgSize  = document.getElementById('cfg-config-size');
+    var prevBtn  = document.getElementById('cfg-prev');
+    var nextBtn  = document.getElementById('cfg-next');
+    var tierBtns = document.querySelectorAll('.tier-btn');
+
+    function render() {
+      var tier = poolConfigs[currentTier];
+      var cfg = tier.configs[currentIndex];
+      tierName.textContent = tier.label;
+      cfgName.textContent = cfg.name;
+      cfgSize.textContent = tier.size;
+
+      if (cfg.image && cfg.image !== "PLACEHOLDER") {
+        var img = document.createElement('img');
+        img.src = cfg.image;
+        img.alt = tier.label + " pool — " + cfg.name + " configuration";
+        imageEl.innerHTML = '';
+        imageEl.appendChild(img);
+      } else {
+        imageEl.innerHTML =
+          '<div class="config-ph">' +
+            '<div class="config-ph-tier">' + tier.label.toUpperCase() + '</div>' +
+            '<div class="config-ph-name">' + cfg.name.toUpperCase() + '</div>' +
+            '<div class="config-ph-tag">(Placeholder)</div>' +
+          '</div>';
+      }
+
+      tierBtns.forEach(function(btn) {
+        var active = btn.getAttribute('data-tier') === currentTier;
+        btn.classList.toggle('is-active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+    }
+
+    function selectTier(tier) { currentTier = tier; currentIndex = 0; render(); }
+    function cycle(dir) {
+      var len = poolConfigs[currentTier].configs.length;
+      currentIndex = (currentIndex + dir + len) % len;
+      render();
+    }
+
+    prevBtn.addEventListener('click', function() { cycle(-1); });
+    nextBtn.addEventListener('click', function() { cycle(1); });
+    tierBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() { selectTier(btn.getAttribute('data-tier')); });
+    });
+
+    render();
   });
 </script>
 </body>
