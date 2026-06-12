@@ -561,19 +561,21 @@
 
   .build-inner { max-width: 640px; margin: 0 auto; }
     /* ===== Pool Configuration Showcase ===== */
-    .config-showcase{max-width:640px;margin:0 auto 48px;}
+    .config-showcase{max-width:750px;margin:0 auto 48px;}
     .config-showcase .tc-header{text-align:center;background:#FFFFFF;}
-    .config-showcase .config-stage{background:#F3EBE1;}
-    .config-showcase .config-caption{background:#F3EBE1;}
+    .config-showcase .config-stage{background:#FFFFFF;}
+    .config-showcase .config-caption{background:#FFFFFF;}
     .config-showcase .tier-selector{background:#FFFFFF;}
-    .config-stage{display:flex;align-items:center;gap:12px;padding:20px 16px;}
-    .config-arrow{flex:0 0 auto;width:44px;height:44px;border-radius:50%;
-      border:1px solid rgba(196,82,30,0.4);background:#F3EBE1;color:#C4521E;
+    .config-stage{position:relative;padding:16px;}
+    .config-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:44px;height:44px;border-radius:50%;
+      border:1px solid rgba(196,82,30,0.4);background:rgba(255,255,255,0.85);color:#C4521E;
       font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;
-      justify-content:center;transition:background 0.2s,color 0.2s;font-family:"Courier Prime",monospace;}
+      justify-content:center;transition:background 0.2s,color 0.2s;font-family:"Courier Prime",monospace;
+      box-shadow:0 1px 3px rgba(0,0,0,0.12);}
+    #cfg-prev{left:12px;}
+    #cfg-next{right:12px;}
     .config-arrow:hover{background:#C4521E;color:#F3EBE1;}
-    .config-image{flex:1 1 auto;aspect-ratio:4/3;border:none;
-      border-radius:2px;overflow:hidden;background:#F3EBE1;min-width:0;}
+    .config-image{position:relative;aspect-ratio:4/3;border:none;border-radius:2px;overflow:hidden;background:#FFFFFF;}
     .config-image img{width:100%;height:100%;display:block;object-fit:contain;}
     .config-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;
       justify-content:center;gap:8px;text-align:center;padding:16px;
@@ -593,8 +595,10 @@
     .tier-btn:hover{border-color:#C4521E;}
     .tier-btn.is-active{background:#C4521E;color:#F3EBE1;border-color:#C4521E;}
     @media(max-width:600px){
-      .config-stage{gap:8px;padding:16px 10px;}
-      .config-arrow{width:36px;height:36px;font-size:17px;}
+      .config-stage{padding:12px 10px;}
+      .config-arrow{font-size:17px;}
+      #cfg-prev{left:6px;}
+      #cfg-next{right:6px;}
       .config-name{font-size:19px;}
       .tier-selector{gap:8px;padding:16px;}
       .tier-btn{font-size:12px;padding:11px 4px;letter-spacing:0.06em;}
@@ -811,7 +815,7 @@ src="https://www.facebook.com/tr?id=1472955013947840&ev=PageView&noscript=1"
 <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Custom Pool Designs in Phoenix, AZ</h1>
 
 <section class="section" style="background:#F3EBE1!important;padding-top:120px;padding-bottom:40px;">
-  <div class="inner" style="max-width:680px;">
+  <div class="inner" style="max-width:750px;">
 
     <h2 style="margin-bottom:8px;text-align:center;">Our Pools</h2>
     <p class="sub" style="margin-bottom:8px;text-align:center;">Three sizes. All-in pricing.</p>
