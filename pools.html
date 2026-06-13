@@ -566,6 +566,7 @@
     .config-showcase .config-stage{background:#FFFFFF;}
     .config-showcase .config-caption{background:#FFFFFF;}
     .config-showcase .tier-selector{background:#FFFFFF;}
+    .wf-showcase .tier-selector{grid-template-columns:repeat(2,1fr);}
     .config-stage{position:relative;padding:8px;}
     .config-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:44px;height:44px;border-radius:50%;
       border:1px solid rgba(196,82,30,0.4);background:rgba(255,255,255,0.85);color:#C4521E;
@@ -1039,6 +1040,25 @@ src="https://www.facebook.com/tr?id=1472955013947840&ev=PageView&noscript=1"
         </div>
       </div>
 
+      <!-- WATER FEATURE SHOWCASE -->
+      <div class="timecard config-showcase wf-showcase">
+        <div class="tc-header">
+          <div class="tc-punch-label">Water Feature Options</div>
+          <div class="tc-pool-name" id="wf-name">Water Feature</div>
+        </div>
+        <div class="config-stage wf-stage">
+          <div class="config-image wf-image" id="wf-image">
+            <img src="https://res.cloudinary.com/dueqxh9bo/image/upload/f_auto,q_auto/v1781305555/image0_9_bomf4r.png" alt="Water Feature">
+          </div>
+        </div>
+        <div class="config-caption">
+          <div class="config-name" id="wf-caption">Water Feature</div>
+        </div>
+        <div class="tier-selector wf-selector" role="group" aria-label="Select water feature style">
+          <button type="button" class="tier-btn is-active" data-wf="water-feature" aria-pressed="true">Water Feature</button>
+          <button type="button" class="tier-btn" data-wf="rain-curtain" aria-pressed="false">Rain Curtain</button>
+        </div>
+      </div>
       <p style="font-family:'DM Sans',sans-serif;font-size:11px;color:#1C0F06;opacity:0.35;letter-spacing:0.06em;line-height:1.7;margin-top:24px;">After Hours Pool Co. is not a lender. Estimated monthly payments are based on 6.99% APR over 30 years and are for illustrative purposes only. Actual rates and terms are subject to credit approval through our lending partner.</p>
 
     </div>
@@ -1259,6 +1279,36 @@ src="https://www.facebook.com/tr?id=1472955013947840&ev=PageView&noscript=1"
     });
 
     render();
+  });
+</script>
+<script>
+  // Water feature showcase — simpler than pool config (no tier switching, no arrows, just 2 options)
+  const waterFeatures = {
+    'water-feature': { label: "Water Feature", image: "https://res.cloudinary.com/dueqxh9bo/image/upload/f_auto,q_auto/v1781305555/image0_9_bomf4r.png" },
+    'rain-curtain':  { label: "Rain Curtain",  image: "https://res.cloudinary.com/dueqxh9bo/image/upload/f_auto,q_auto/v1781305555/image1_5_gzxlwk.png" }
+  };
+  document.addEventListener('DOMContentLoaded', function() {
+    var imageEl = document.getElementById('wf-image');
+    if (!imageEl) return;
+    var nameEl = document.getElementById('wf-name');
+    var captionEl = document.getElementById('wf-caption');
+    var btns = document.querySelectorAll('.wf-selector .tier-btn');
+    function selectWF(key) {
+      var wf = waterFeatures[key];
+      var img = document.createElement('img');
+      img.src = wf.image; img.alt = wf.label;
+      imageEl.innerHTML = ''; imageEl.appendChild(img);
+      nameEl.textContent = wf.label; captionEl.textContent = wf.label;
+      btns.forEach(function(btn) {
+        var active = btn.getAttribute('data-wf') === key;
+        btn.classList.toggle('is-active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+    }
+    btns.forEach(function(btn) {
+      btn.addEventListener('click', function() { selectWF(btn.getAttribute('data-wf')); });
+    });
+    selectWF('water-feature'); // default
   });
 </script>
 </body>
