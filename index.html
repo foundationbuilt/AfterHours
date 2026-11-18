@@ -90,6 +90,12 @@
     .rv-src{font-family:"DM Sans",sans-serif;font-size:11px;color:rgba(28,15,6,0.55);letter-spacing:0.06em;}
     .rv-all{display:inline-block;margin-top:32px;font-family:"DM Sans",sans-serif;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#C4521E;text-decoration:none;}
     .rv-all:hover{opacity:0.8;}
+    .rv-actions{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:8px 18px;margin-top:32px;}
+    .rv-actions .rv-all{margin-top:0;}
+    .rv-all-secondary{font-size:12px;opacity:0.7;}
+    .rv-all-secondary:hover{opacity:1;}
+    .rv-sep{color:#C4521E;opacity:0.5;font-size:14px;}
+    @media(max-width:600px){.rv-actions{flex-direction:column;align-items:center;}.rv-sep{display:none;}}
     .scroll-cue{margin-top:72px;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:#1C0F06;}
     .scroll-cue i{width:1px;height:44px;background:#C4B09A;display:block;}
 
@@ -797,7 +803,11 @@ src="https://www.facebook.com/tr?id=1472955013947840&ev=PageView&noscript=1"
         <figcaption><span class="rv-name">Haley Holtz</span><span class="rv-src">via Google</span></figcaption>
       </figure>
     </div>
-    <a class="rv-all" href="https://g.page/r/CZ7SD3Amy7z9EAE/review" target="_blank" rel="noopener">Read all reviews on Google &rarr;</a>
+    <div class="rv-actions">
+      <a class="rv-all" href="https://www.google.com/search?q=After+Hours+Pool+Co&amp;stick=H4sIAAAAAAAA_-NgU1I1qEhMMzIySjS2NEhMMUkxTjS3MqhIS0lKTk4yMjM3MEhLMbJMXcQq7JhWklqk4JFfWlSsEJCfn6PgnA8ADvuzHj8AAAA&amp;hl=en#mpd=~16132404964618029376/customers/reviews" target="_blank" rel="noopener">Read all reviews on Google &rarr;</a>
+      <span class="rv-sep" aria-hidden="true">&middot;</span>
+      <a class="rv-all rv-all-secondary" href="https://g.page/r/CZ7SD3Amy7z9EAE/review" target="_blank" rel="noopener">Leave a review &rarr;</a>
+    </div>
   </div>
 </section>
 
