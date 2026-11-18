@@ -29,8 +29,8 @@
   <meta name="facebook-domain-verification" content="g802jqbjf23phbabhwm5ieop6rq2wl" />
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville:ital,wght@0,700;1,400&family=Courier+Prime&family=Zilla+Slab:wght@600;700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville:ital,wght@0,700;1,400&family=Courier+Prime&family=Zilla+Slab:wght@600;700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet"/></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville:ital,wght@0,700;1,400&family=Courier+Prime&family=Zilla+Slab:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville:ital,wght@0,700;1,400&family=Courier+Prime&family=Zilla+Slab:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/></noscript>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     :root{color-scheme:light only;}
@@ -67,6 +67,29 @@
     .hero-sub{font-size:14px;color:#1C0F06;max-width:360px;margin:32px auto 40px;line-height:1.85;font-weight:300;}
     .btn-fill{display:inline-block;background:#C4521E;color:#F3EBE1;padding:15px 38px;font-size:13px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;border-radius:100px;transition:opacity 0.2s;font-family:"DM Sans",sans-serif;}
     .btn-fill:hover{opacity:0.85;}
+    #hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:65%;background:linear-gradient(to top,rgba(28,15,6,0.62) 0%,rgba(28,15,6,0.4) 45%,rgba(28,15,6,0) 100%);z-index:1;pointer-events:none;}
+    @media(max-width:600px){#hero::after{height:80%;}}
+    #hero .hero-h--lead{font-size:clamp(32px,4.5vw,56px);line-height:1.05;max-width:18ch;margin:0 auto;text-wrap:balance;}
+    #hero .hero-support{font-family:"DM Sans",sans-serif;font-size:clamp(16px,1.8vw,20px);line-height:1.55;color:#F3EBE1;max-width:560px;margin:20px auto 0;font-weight:500;}
+    #hero .hero-meta{font-family:"DM Sans",sans-serif;font-size:clamp(12px,1.2vw,14px);letter-spacing:0.12em;text-transform:uppercase;color:rgba(243,235,225,0.8);margin-top:20px;}
+    #hero .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:32px;}
+    .btn-ghost{display:inline-block;border:1px solid #F3EBE1;color:#F3EBE1;padding:14px 36px;font-size:13px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;border-radius:100px;font-family:"DM Sans",sans-serif;transition:background 0.2s;}
+    .btn-ghost:hover{background:rgba(243,235,225,0.12);}
+    .tc-img-caption{font-family:"DM Sans",sans-serif;font-size:11px;letter-spacing:0.06em;color:rgba(28,15,6,0.55);text-align:center;padding:8px 12px;margin:0;}
+    /* TESTIMONIALS */
+    .rv-sub{font-family:"DM Sans",sans-serif;}
+    .rv-grid{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:20px;margin-top:40px;text-align:left;}
+    @media(max-width:768px){.rv-grid{grid-template-columns:1fr;grid-auto-rows:auto;}}
+    .rv-card{margin:0;background:#F5EDD9;border:1px solid rgba(196,82,30,0.25);border-radius:2px;box-shadow:0 2px 12px rgba(28,15,6,0.08);padding:28px;display:flex;flex-direction:column;gap:14px;}
+    .rv-stars{color:#C4521E;font-size:18px;letter-spacing:0.15em;line-height:1;}
+    .rv-quote{margin:0;font-family:"DM Sans",sans-serif;font-style:italic;font-size:15px;line-height:1.7;color:#1C0F06;}
+    .rv-clamp{display:-webkit-box;-webkit-line-clamp:6;line-clamp:6;-webkit-box-orient:vertical;overflow:hidden;}
+    .rv-more{align-self:flex-start;background:none;border:none;padding:0;cursor:pointer;font-family:"DM Sans",sans-serif;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#C4521E;}
+    .rv-card figcaption{margin-top:auto;display:flex;flex-direction:column;gap:2px;}
+    .rv-name{font-family:"Courier Prime",monospace;font-weight:700;font-size:14px;color:#1C0F06;}
+    .rv-src{font-family:"DM Sans",sans-serif;font-size:11px;color:rgba(28,15,6,0.55);letter-spacing:0.06em;}
+    .rv-all{display:inline-block;margin-top:32px;font-family:"DM Sans",sans-serif;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#C4521E;text-decoration:none;}
+    .rv-all:hover{opacity:0.8;}
     .scroll-cue{margin-top:72px;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:#1C0F06;}
     .scroll-cue i{width:1px;height:44px;background:#C4B09A;display:block;}
 
@@ -293,7 +316,14 @@
     ],
     "sameAs": [
       "https://www.instagram.com/afterhourspoolco"
-    ]
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "4",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
   }
   </script>
   <script type="application/ld+json">
@@ -355,9 +385,13 @@ src="https://www.facebook.com/tr?id=1472955013947840&ev=PageView&noscript=1"
 <section id="hero">
   <img class="hero-img" src="https://res.cloudinary.com/dueqxh9bo/image/upload/f_auto,q_auto/v1794599329/Sky_Blue_Closeup_Tile_3_iwzlbc.jpg" alt="Close-up view of Sky Blue waterline tile detail from a custom pool built by After Hours Pool Co. in the Phoenix metro area" fetchpriority="high" width="3000" height="2071">
   <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Custom Pool Builder in Phoenix, AZ</h1>
-  <div class="hero-h">Time to<em>Clock Out.</em></div>
-  <a class="btn-fill" href="contact.html" style="margin-top:40px;">Start My Project</a>
-  <p class="hero-tagline">Custom pools built across the Phoenix metro — fixed price, eight weeks.</p>
+  <div class="hero-h hero-h--lead">A Better Way to Build a Pool.</div>
+  <p class="hero-support">Three thoughtfully designed pool sizes. Curated finishes. Transparent pricing. Built in eight weeks.</p>
+  <p class="hero-meta">Starting at $45,000 &nbsp;&middot;&nbsp; Greater Phoenix</p>
+  <div class="hero-ctas">
+    <a class="btn-fill" href="contact.html">Start My Project</a>
+    <a class="btn-ghost" href="pools.html">Explore Our Pools</a>
+  </div>
 </section>
 
 <hr class="div"/>
@@ -381,7 +415,7 @@ src="https://www.facebook.com/tr?id=1472955013947840&ev=PageView&noscript=1"
               </div>
             </div>
             <div class="tc-img-row">
-              <img src="https://res.cloudinary.com/dueqxh9bo/image/upload/f_auto,q_auto/v1776023429/poolsafterhour_poavme.png" alt="Private Pool" width="1024" height="1024" loading="lazy"/>
+              <img src="https://res.cloudinary.com/dueqxh9bo/image/upload/f_auto,q_auto,w_1400/v1794599327/Private_Sand_Drone_2_yvhzdw.jpg" alt="Aerial view of a Private tier pool with Sand colorway, built by After Hours Pool Co." width="1400" height="933" loading="lazy"/>
             </div>
             <div class="tc-grid">
               <div class="tc-row">
@@ -411,7 +445,8 @@ src="https://www.facebook.com/tr?id=1472955013947840&ev=PageView&noscript=1"
               </div>
             </div>
             <div class="tc-img-row">
-              <div class="ph">Social Pool &nbsp;·&nbsp; Photo Coming Soon</div>
+              <img src="https://res.cloudinary.com/dueqxh9bo/image/upload/f_auto,q_auto,w_1400/v1794599308/Agave_Gathering_Drone_1_umg7j3.jpg" alt="Gathering tier pool with Agave colorway — Social tier photography coming soon" width="1400" height="933" loading="lazy"/>
+              <p class="tc-img-caption">Gathering build shown — Social photography coming soon</p>
             </div>
             <div class="tc-grid">
               <div class="tc-row">
@@ -441,7 +476,7 @@ src="https://www.facebook.com/tr?id=1472955013947840&ev=PageView&noscript=1"
               </div>
             </div>
             <div class="tc-img-row">
-              <div class="ph">Gathering Pool &nbsp;·&nbsp; Photo Coming Soon</div>
+              <img src="https://res.cloudinary.com/dueqxh9bo/image/upload/f_auto,q_auto,w_1400/v1794599331/Sky_Blue_Gathering_Drone_2_mc82gi.jpg" alt="Aerial view of a Gathering tier pool with Sky Blue colorway, built by After Hours Pool Co." width="1400" height="933" loading="lazy"/>
             </div>
             <div class="tc-grid">
               <div class="tc-row">
@@ -734,6 +769,41 @@ src="https://www.facebook.com/tr?id=1472955013947840&ev=PageView&noscript=1"
 
 <hr class="div"/>
 
+<!-- TESTIMONIALS -->
+<section id="reviews" class="section center" style="background:#F3EBE1!important;">
+  <div class="inner" style="max-width:900px;">
+    <h2>Real Owners. Real Pools.<br>Real Reviews.</h2>
+    <p class="sub rv-sub">Five stars on Google. Here's what After Hours owners are saying.</p>
+    <div class="rv-grid">
+      <figure class="rv-card">
+        <div class="rv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote class="rv-quote">Kayne and the After Hours team were great to work with. The transparent pricing was so refreshing. We knew exactly what the pool would cost from the beginning and that price never changed. The build moved incredibly fast and the whole process was simple and straightforward. Couldn’t be happier with how it turned out!</blockquote>
+        <figcaption><span class="rv-name">Marco Castilla</span><span class="rv-src">via Google</span></figcaption>
+      </figure>
+      <figure class="rv-card">
+        <div class="rv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote class="rv-quote">Great experience having our new pool built. We have friends that started their build months ago and still have not finished, After Hours was in and out in the promised time frame for the quotes price. Highly recommend</blockquote>
+        <figcaption><span class="rv-name">Sarah G</span><span class="rv-src">via Google</span></figcaption>
+      </figure>
+      <figure class="rv-card">
+        <div class="rv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote class="rv-quote rv-clamp" id="rv-lindsay">The most stress-free pool building experience in AZ! We wanted a beautiful backyard pool but didn’t want to spend six months working with a pool builder going over infinite custom design choices and hidden fees. We loved working with After Hours Pool Co. Their curated approach made the entire process incredibly straightforward and stress-free. They have fantastic, modern layouts ready to go, and selecting our tile and finishes from their pre-curated options was so easy. Because everything is already designed, there were no budget surprises, and the timeline was way faster than expected. The communication was excellent, and the actual construction team was professional and efficient. If you want a stunning, high-quality pool without the headache, After Hours Pool Co. is the absolute best way to go!</blockquote>
+        <button class="rv-more" type="button" aria-expanded="false" aria-controls="rv-lindsay" onclick="toggleReview(this)">Read more</button>
+        <figcaption><span class="rv-name">Lindsay</span><span class="rv-src">via Google</span></figcaption>
+      </figure>
+      <figure class="rv-card">
+        <div class="rv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote class="rv-quote">Great experience start to finish. The construction process was smooth, quick, and just as they stated. I’d recommend them to anyone and everyone who wants a beautiful pool at a great price in a short amount of time. Highly recommend!</blockquote>
+        <figcaption><span class="rv-name">Haley Holtz</span><span class="rv-src">via Google</span></figcaption>
+      </figure>
+    </div>
+    <!-- TODO: replace # with Google Business Profile reviews URL -->
+    <a class="rv-all" href="#">Read all reviews on Google &rarr;</a>
+  </div>
+</section>
+
+<hr class="div"/>
+
 <!-- CONTACT -->
 <section id="contact" class="section center">
   <div class="inner" style="max-width:620px;">
@@ -787,6 +857,13 @@ src="https://www.facebook.com/tr?id=1472955013947840&ev=PageView&noscript=1"
     cc = n;
   }
   function nextCard() { showCard((cc+1)%3); }
+  // Testimonials: Read more toggle
+  function toggleReview(btn) {
+    var q = document.getElementById(btn.getAttribute('aria-controls'));
+    var open = q.classList.toggle('rv-clamp') === false;
+    btn.setAttribute('aria-expanded', open);
+    btn.textContent = open ? 'Read less' : 'Read more';
+  }
   function prevCard() { showCard((cc-1+3)%3); }
 
   // Process
