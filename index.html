@@ -55,6 +55,69 @@
     .section{padding:96px 40px;background:var(--section-bg,#F3EBE1)!important;}
     .bg-sand{--section-bg:#EADFCF;}
     .bg-terra{--section-bg:#C4521E;}
+    .bg-white{--section-bg:#FFFFFF;}
+
+    /* WHAT YOU'RE GETTING: editorial brochure layout in one cream panel on the sand section.
+       Header (eyebrow, headline, accent) / 8 icon features + 9:16 walkthrough embed sized to the grid's height / hairline / What's Included row */
+    .wyg-panel{box-sizing:border-box;max-width:1240px;margin:0 auto;padding:64px 56px;background:#F3EBE1;border-radius:4px;text-align:left;}
+    #whats-included .wyg-headline{font-size:clamp(32px,3.5vw,48px);line-height:1.1;color:#1C0F06;margin:0;text-align:center;}
+    .wyg-accent{display:block;width:88px;height:2px;background:#C4521E;margin-top:22px;}
+    .wyg-accent--sm{width:68px;margin-top:18px;} /* same scale as every section h2; 18ch (Courier is 0.6em per glyph) breaks it "Details That Make / A Better Pool" at any size */
+    .wyg-top{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);column-gap:56px;margin-top:56px;align-items:center;} /* headline to grid; feature grid centred against the taller video */
+    .wyg-feats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 36px;align-content:start;}
+    .wyg-feat{display:flex;gap:16px;align-items:flex-start;}
+    .wyg-icon{flex:none;display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:4px;background:#EADFCF;color:#C4521E;}
+    .wyg-icon svg,.wyg-inc-icon svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;}
+    #whats-included .wyg-feat-title{font-family:"Courier Prime",monospace;font-size:15px;font-weight:700;letter-spacing:0.04em;line-height:1.25;text-transform:uppercase;color:#1C0F06;margin:1px 0 6px;}
+    .wyg-feat-body{font-family:"DM Sans",sans-serif;font-size:14px;line-height:1.5;color:rgba(28,15,6,0.75);margin:0;}
+    /* Video takes the feature grid's height (stretched grid cell) and derives its 9:16 width from it */
+    /* Video: 9:16 at a fixed 357px wide, right-aligned in its column; it sets the row height and the feature grid centres against it */
+    .wyg-video{display:flex;justify-content:flex-end;}
+    .wyg-video iframe{display:block;width:357px;height:auto;aspect-ratio:9/16;max-width:100%;border:0;border-radius:4px;background:#1C0F06;}
+    .wyg-rule{border:0;height:1px;background:rgba(28,15,6,0.1);margin:56px 0;}
+    .wyg-inc{display:grid;grid-template-columns:200px minmax(0,1fr);column-gap:48px;align-items:start;}
+    #whats-included .wyg-inc-label{font-family:"Courier Prime",monospace;font-size:36px;font-weight:700;line-height:1.05;color:#1C0F06;margin:0;}
+    /* 4 groups; a hairline sits centred in each 40px gutter (20px gap + 20px padding), none outside the first/last group */
+    .wyg-inc-groups{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px 20px;}
+    .wyg-inc-group + .wyg-inc-group{border-left:1px solid rgba(28,15,6,0.12);padding-left:20px;}
+    .wyg-inc-icon{display:block;color:#C4521E;margin-bottom:12px;line-height:0;}
+    #whats-included .wyg-inc-title{font-family:"Courier Prime",monospace;font-size:15px;font-weight:700;letter-spacing:0.04em;line-height:1.25;text-transform:uppercase;color:#1C0F06;margin:0 0 8px;}
+    /* Items joined by interpuncts. Each dot sits in its item's left padding and the list is shifted left under an
+       overflow clip, so the dot of an item that starts a line is hidden: no dot ever starts or ends a line, and long
+       items can still wrap inside their own box */
+    .wyg-items-wrap{overflow:hidden;}
+    .wyg-items{display:flex;flex-wrap:wrap;list-style:none;padding:0;margin:0 0 0 -1.1em;font-family:"DM Sans",sans-serif;font-size:14px;line-height:1.5;color:rgba(28,15,6,0.75);}
+    .wyg-items li{position:relative;padding-left:1.1em;}
+    .wyg-items li::before{content:"\00B7";position:absolute;left:0;top:0;width:1.1em;text-align:center;color:#C4521E;}
+    @media(max-width:1180px){
+      .wyg-top{grid-template-columns:minmax(0,1fr) minmax(0,300px);}
+      .wyg-top{align-items:start;}
+      .wyg-video iframe{width:100%;height:auto;} /* stacked list outgrows a 9:16 frame: fixed width, top-aligned */
+      .wyg-feats{grid-template-columns:1fr;}
+      .wyg-inc{grid-template-columns:1fr;row-gap:32px;}
+    }
+    @media(max-width:900px){
+      #whats-included{padding-left:16px;padding-right:16px;}
+      .wyg-panel{padding:32px 24px;}
+      .wyg-top{grid-template-columns:1fr;row-gap:40px;margin-top:36px;}
+      .wyg-video{order:-1;width:100%;max-width:360px;margin:0 auto;}
+      .wyg-video iframe{width:100%;height:auto;}
+      .wyg-rule{margin:48px 0;}
+      #whats-included .wyg-inc-label{font-size:32px;}
+      .wyg-inc-groups{grid-template-columns:repeat(2,minmax(0,1fr));}
+      .wyg-inc-group + .wyg-inc-group{border-left:0;padding-left:0;}
+      .wyg-inc-group:nth-child(even){border-left:1px solid rgba(28,15,6,0.12);padding-left:20px;}
+    }
+    @media(max-width:480px){
+      .wyg-inc-groups{grid-template-columns:1fr;}
+      .wyg-inc-group:nth-child(even){border-left:0;padding-left:0;}
+    }
+
+    /* WHERE WE BUILD: interpunct city list (dot trails each city so no line starts with a dot) */
+    .wwb-cities{list-style:none;margin:40px auto 0;padding:0;max-width:820px;text-align:center;font-family:"DM Sans",sans-serif;font-size:19px;line-height:2.1;color:#1C0F06;}
+    .wwb-cities li{display:inline;white-space:nowrap;}
+    .wwb-cities li:not(:last-child)::after{content:"\00B7";margin:0 0.65em;color:#C4521E;}
+    @media(max-width:600px){.wwb-cities{font-size:17px;}}
     .center{text-align:center;}
     .inner{max-width:640px;margin:0 auto;}
     .eyebrow{font-size:14px;letter-spacing:0.28em;text-transform:uppercase;color:#C4521E;margin-bottom:18px;}
@@ -160,8 +223,6 @@
 
     /* ── TIME CARD POOLS ── */
     #pools .inner{max-width:700px;}
-    .tier-summary{max-width:720px;margin:48px auto 0;padding:0 8px;font-family:"DM Sans",sans-serif;font-weight:400;font-size:16px;line-height:1.8;color:#1C0F06;text-align:left;}
-    .tier-summary strong{font-weight:700;color:#1C0F06;}
     .timecard-wrap{position:relative;margin-top:44px;}
 
     /* Stack of cards behind */
@@ -560,14 +621,85 @@ src="https://www.facebook.com/tr?id=1472955013947840&ev=PageView&noscript=1"
         <button class="card-arrow" onclick="nextCard()">&#8594;</button>
       </div>
     </div>
-    <p class="tier-summary">
-      After Hours offers three transparent, all-in pool tiers in the Phoenix metro area. The <strong>Private Pool</strong> is a 10' &times; 18' build at $45,000, designed for smaller yards and intimate escapes. The <strong>Social Pool</strong> is a 12' &times; 24' build at $52,500, designed for weekend crowds and tanning ledges. The <strong>Gathering Pool</strong> is a 14' &times; 28' build at $60,000, designed for entertaining and full outdoor living. All three include PebbleTec finish, premium tile, LED nicheless lighting, variable speed pump, and Jandy automation. Add-ons including spa, heater, chiller, salt system, infloor cleaning, and water features are individually priced and can be combined with any tier.
-    </p>
+  </div>
+</section>
+
+<!-- WHAT YOU'RE GETTING -->
+<section id="whats-included" class="section bg-sand">
+  <div class="wyg-panel">
+    <header class="wyg-head">
+      <h2 class="wyg-headline">Details That Make A Better Pool</h2>
+    </header>
+    <div class="wyg-top">
+      <div class="wyg-feats">
+        <div class="wyg-feat">
+          <span class="wyg-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+          <div><h3 class="wyg-feat-title">Oversized Plumbing</h3><p class="wyg-feat-body">2″ – 2.5″ lines instead of the 1.5″ – 2″ most builders run. Better flow, quieter operation, crystal-clear water.</p></div>
+        </div>
+        <div class="wyg-feat">
+          <span class="wyg-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 12h18"/><path d="M12 3v18"/></svg></span>
+          <div><h3 class="wyg-feat-title">Premium Porcelain Waterline Tile</h3><p class="wyg-feat-body">Large-format porcelain instead of the standard blue-dot 6×6 ceramic you see on every budget build.</p></div>
+        </div>
+        <div class="wyg-feat">
+          <span class="wyg-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></span>
+          <div><h3 class="wyg-feat-title">16″ × 24″ Limestone Coping</h3><p class="wyg-feat-body">Large-format limestone platform coping — the architectural edge you see on high-end custom builds.</p></div>
+        </div>
+        <div class="wyg-feat">
+          <span class="wyg-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg></span>
+          <div><h3 class="wyg-feat-title">Pool Automation</h3><p class="wyg-feat-body">Full automation from your phone — included at no extra cost. Most builders charge thousands for what others cram into Bluetooth-only controllers.</p></div>
+        </div>
+        <div class="wyg-feat">
+          <span class="wyg-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></span>
+          <div><h3 class="wyg-feat-title">Venturi Skimmers</h3><p class="wyg-feat-body">Oversized baskets that stay out of the way visually and do more work mechanically.</p></div>
+        </div>
+        <div class="wyg-feat">
+          <span class="wyg-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="1"/></svg></span>
+          <div><h3 class="wyg-feat-title">Pebble Finish Main Drains</h3><p class="wyg-feat-body">Flush pebble covers instead of visible plastic 10″ discs on the pool floor.</p></div>
+        </div>
+        <div class="wyg-feat">
+          <span class="wyg-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></span>
+          <div><h3 class="wyg-feat-title">Color-Changing Lights</h3><p class="wyg-feat-body">Multiple nicheless color-changing LEDs placed to light every corner of the pool evenly. No dark spots, no bulky cans with failed gaskets costing thousands to replace later.</p></div>
+        </div>
+        <div class="wyg-feat">
+          <span class="wyg-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="5" cy="5" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="19" cy="5" r="1"/><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="19" r="1"/><circle cx="12" cy="19" r="1"/><circle cx="19" cy="19" r="1"/></svg></span>
+          <div><h3 class="wyg-feat-title">PebbleTec Interior Finish</h3><p class="wyg-feat-body">A premium aggregate finish with real depth and dimension. The look that defines modern pools.</p></div>
+        </div>
+      </div>
+      <div class="wyg-video">
+        <iframe src="https://www.youtube.com/embed/vvsi2emH81g?rel=0&amp;playsinline=1" title="After Hours Pool Co. build walkthrough" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+    <hr class="wyg-rule">
+    <div class="wyg-inc">
+      <h3 class="wyg-inc-label">What’s<br>Included<span class="wyg-accent wyg-accent--sm" aria-hidden="true"></span></h3>
+      <div class="wyg-inc-groups">
+        <div class="wyg-inc-group">
+          <span class="wyg-inc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg></span>
+          <h4 class="wyg-inc-title">Engineering &amp; Permits</h4>
+          <div class="wyg-items-wrap"><ul class="wyg-items"><li>Engineered Structural Plans</li> <li>City Permit Fees</li> <li>All Required Inspections</li></ul></div>
+        </div>
+        <div class="wyg-inc-group">
+          <span class="wyg-inc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"/></svg></span>
+          <h4 class="wyg-inc-title">Construction</h4>
+          <div class="wyg-items-wrap"><ul class="wyg-items"><li>Excavation</li> <li>Plumbing</li> <li>Rebar</li> <li>Electric</li> <li>Shotcrete</li> <li>Tile</li> <li>Coping</li></ul></div>
+        </div>
+        <div class="wyg-inc-group">
+          <span class="wyg-inc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></span>
+          <h4 class="wyg-inc-title">Equipment</h4>
+          <div class="wyg-items-wrap"><ul class="wyg-items"><li>Automation</li> <li>Cartridge Filter</li> <li>Variable-Speed Pump</li> <li>Color-Changing Lights</li></ul></div>
+        </div>
+        <div class="wyg-inc-group">
+          <span class="wyg-inc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg></span>
+          <h4 class="wyg-inc-title">Finish &amp; Startup</h4>
+          <div class="wyg-items-wrap"><ul class="wyg-items"><li>PebbleTec Interior Finish</li> <li>Chemistry Startup</li> <li>Owner Walkthrough</li> <li>Pool Orientation</li></ul></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- HOW THIS WORKS -->
-<section id="how-it-works" class="section center bg-sand">
+<section id="how-it-works" class="section center">
   <div class="inner" style="max-width:1000px;">
     <h2>How This Works</h2>
     <p class="sub">Buying a pool shouldn't feel like getting pitched. Here's what working with us actually looks like.</p>
@@ -592,31 +724,8 @@ src="https://www.facebook.com/tr?id=1472955013947840&ev=PageView&noscript=1"
   </div>
 </section>
 
-<!-- STATEMENT -->
-<section id="statement" class="section">
-  <div class="inner" style="max-width:680px;">
-    <h2 style="font-family:"Courier Prime",monospace;font-weight:700;font-size:clamp(20px,2.2vw,28px);line-height:1.1;margin-bottom:20px;">Simplified Choices. Elevated Results.</h2>
-    <p style="font-size:18px;color:#1C0F06;font-weight:400;line-height:1.7;margin-bottom:20px;">Most homeowners don't want endless options. They want the right ones.</p>
-    <p style="font-size:17px;color:#1C0F06;line-height:1.85;margin-bottom:32px;font-weight:400;">Our curated palette of premium materials, elevated finishes, and thoughtful layouts removes decision fatigue while delivering a high end result.</p>
-    <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:48px;">
-      <p style="font-size:18px;color:#1C0F06;font-weight:400;">→ &nbsp;Clearer Decisions.</p>
-      <p style="font-size:18px;color:#1C0F06;font-weight:400;">→ &nbsp;Smoother Process.</p>
-      <p style="font-size:18px;color:#1C0F06;font-weight:400;">→ &nbsp;Better Craftsmanship.</p>
-    </div>
-  </div>
-</section>
-
-<!-- STATEMENT 2 -->
-<section class="section bg-sand">
-  <div class="inner" style="max-width:680px;">
-    <h2 style="font-family:"Courier Prime",monospace;font-weight:700;font-size:clamp(20px,2.2vw,28px);line-height:1.1;margin-bottom:20px;">Built for Control,<br>Not Cost Cutting.</h2>
-    <p style="font-size:18px;color:#1C0F06;font-weight:400;line-height:1.7;margin-bottom:20px;">The cheapest path usually comes with the most unknowns.</p>
-    <p style="font-size:17px;color:#1C0F06;line-height:1.85;margin-bottom:32px;font-weight:400;">We designed our build process to be intentionally repeatable, controlled, and predictable. Creating less risk and greater long term value for you.</p>
-  </div>
-</section>
-
 <!-- TESTIMONIALS -->
-<section id="reviews" class="section center">
+<section id="reviews" class="section center bg-sand">
   <div class="inner">
     <h2>Real Owners. Real Pools.<br>Real Reviews.</h2>
   </div>
@@ -671,7 +780,7 @@ src="https://www.facebook.com/tr?id=1472955013947840&ev=PageView&noscript=1"
 </section>
 
 <!-- COMMON QUESTIONS -->
-<section id="questions" class="section center bg-sand">
+<section id="questions" class="section center">
   <div class="inner" style="max-width:720px;">
     <h2>Common Questions</h2>
     <p class="sub">Answers before you have to ask.</p>
@@ -694,6 +803,35 @@ src="https://www.facebook.com/tr?id=1472955013947840&ev=PageView&noscript=1"
       </details>
     </div>
   </div>
+</section>
+
+<!-- WHERE WE BUILD -->
+<section id="where-we-build" class="section center bg-sand">
+  <div class="inner">
+    <h2>Where We Build</h2>
+    <p class="sub">We serve the Greater Phoenix metro.</p>
+  </div>
+  <ul class="wwb-cities">
+    <li>Phoenix</li>
+    <li>Scottsdale</li>
+    <li>Paradise Valley</li>
+    <li>Cave Creek</li>
+    <li>Carefree</li>
+    <li>Anthem</li>
+    <li>Peoria</li>
+    <li>Glendale</li>
+    <li>Surprise</li>
+    <li>Goodyear</li>
+    <li>Buckeye</li>
+    <li>Litchfield Park</li>
+    <li>Avondale</li>
+    <li>Mesa</li>
+    <li>Gilbert</li>
+    <li>Chandler</li>
+    <li>Tempe</li>
+    <li>Ahwatukee</li>
+    <li>Queen Creek</li>
+  </ul>
 </section>
 
 <!-- CONTACT -->
